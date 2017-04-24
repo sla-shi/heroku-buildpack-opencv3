@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Open CV 3.2"
+exit 0

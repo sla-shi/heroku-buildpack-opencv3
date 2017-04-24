@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo "-----> Installing OpenCV 3.2"
+# change to the the BUILD_DIR ($1)
+cd $1
+# download the binary (-O) silently (-s)
+curl -O -s  https://raw.githubusercontent.com/sla-shi/heroku-buildpack-opencv3/master/vendor_cv2.tar.gz 
+# make a directory to untar (like unzip) the binary
+# mkdir -p vendor/opencv
+# untar the binary to the directory we want
+tar -C $1 -xvf vendor_cv2.tar.gz
+
+curl -O -s  https://raw.githubusercontent.com/sla-shi/heroku-buildpack-opencv3/master/cv2.so 
+mv cv2.so $1/.heroku/python/lib
+
+export PATH="$PATH:$1/.heroku/vendor/bin"
