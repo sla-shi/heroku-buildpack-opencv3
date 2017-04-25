@@ -21,4 +21,4 @@ python -c 'import cv2; print(cv2.__version__)'
 
 mkdir -p "$1/.profile.d"
 echo "export PATH=$PATH" > $1/.profile.d/opencv.sh
-echo "export PYTHONPATH=$PYTHONPATH" >> $BUILD_DIR/.profile.d/opencv.sh
+echo "export PYTHONPATH=$PYTHONPATH" >> $1/.profile.d/opencv.sh
