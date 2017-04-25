@@ -18,3 +18,7 @@ export PATH="$PATH:$1/.heroku/vendor/bin"
 export PYTHONPATH="$PYTHONPATH:/app/.heroku/python/lib"
 echo "       Checking cv2 import"
 python -c 'import cv2; print(cv2.__version__)'
+
+mkdir -p "$1/.profile.d"
+echo "export PATH=$PATH" > $1/.profile.d/opencv.sh
+echo "export PYTHONPATH=$PYTHONPATH" >> $BUILD_DIR/.profile.d/opencv.sh
